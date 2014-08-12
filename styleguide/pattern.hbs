@@ -1,0 +1,62 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li>{{category}}</li>
+    <li class="active">{{group}}</li>
+  </ol>
+  <h1 class="page-header">{{title}}</h1>
+  {{#if description}}
+  <p class="lead">{{description}}</p>
+  {{/if}}
+  {{#if external}}
+  <h2>View <a href="{{ url-external this }}">{{title}}</a>.</h2>
+  {{/if}}
+</div>
+
+<div class="container">
+  {{#unless external}}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="bs-example">
+        <h4>Example</h4>
+        <div class="panel panel-default">
+          <div class="panel-body">
+              {{{content}}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/unless}}
+  <div class="row">
+    <div class="col-md-6">
+      {{#if markup}}
+      <pre class="language-markup"><code>{{tidy content}}</code></pre>
+      {{/if}}
+    </div>
+    <div class="col-md-6">
+      {{#if usage}}
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4 class="panel-title">Usage</h4></div>
+        <div class="panel-body">
+          <p>{{{markdown usage}}}</p>
+        </div>
+      </div>
+      {{/if}}
+      {{#if devnotes}}
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4 class="panel-title">Developer Notes</h4></div>
+        <div class="panel-body">
+          <p>{{{markdown devnotes}}}</p>
+        </div>
+      </div>
+      {{/if}}
+      {{#if spec}}
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4 class="panel-title">Behavioural Specification</h4></div>
+        <pre class="hljs"><code class="gherkin">{{spec}}</code></§pre>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

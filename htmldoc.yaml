@@ -1,0 +1,39 @@
+# What folder should the styleguide be published to
+publish: ./publish
+
+# Define where the templates that are used to build the styleguide are.
+templates: ./styleguide/
+template_assets: sg-assets
+
+# The files that should be searched for HTMLdoc declarations
+
+# Commments in built HTML files need to be very precise otherwise
+# replicated components will be built out.
+
+files:
+  - category: Components
+    files: ['./www/theme/**/*.html',
+      './www/grid/**/*.html',
+      './www/modal/**/*.html']
+  - category: Examples
+    files: ['./www/jumbotron/**/*.html',
+      './www/dashboard/**/*.html',
+      './www/starter-template/**/*.html',
+      './www/justified-nav/**/*.html']
+
+# Static Pages
+pages:
+  - index:    true
+    src:      ./index.md
+  - title:    Getting Started
+    src:      ./getting-started.md
+
+htmltidy:
+  indent_size: 2
+  unformatted: [ 'code' ]
+
+git:
+  repo: https://github.com/Koded/htmldoc-example-bootstrap.git
+  dir: ./.tmp
+  branch: gh-pages
+  default-message: Updates to the styleguide.
