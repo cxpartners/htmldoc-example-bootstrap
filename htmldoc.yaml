@@ -31,9 +31,3 @@ pages:
 htmltidy:
   indent_size: 2
   unformatted: [ 'code' ]
-
-git:
-  repo: https://github.com/Koded/htmldoc-example-bootstrap.git
-  dir: ./.tmp
-  branch: gh-pages
-  default-message: Updates to the styleguide.
