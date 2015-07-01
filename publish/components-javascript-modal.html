@@ -290,7 +290,23 @@
       </div>
       <div class="panel panel-default">
         <div class="panel-heading"><h4 class="panel-title">Behavioural Specification</h4></div>
-        <pre class="hljs"><code class="gherkin">file://spec/modal.feature</code></§pre>
+        <pre class="hljs"><code class="gherkin">Scenario: Open Modal
+
+  Given I am on a page with a modal
+   When I click to open the modal
+   Then the modal popup should be shown
+
+Scenario: Close modal using close icon
+
+  Given I am viewing a modal popup
+   When I click on the &#x27;close&#x27; icon
+   Then the modal popup should close
+
+Scenario: Close modal by clicking off the modal
+
+  Given I am viewing a modal popup
+   When I click off the modal
+   Then the modal popup should close</code></§pre>
       </div>
     </div>
   </div>
@@ -302,7 +318,7 @@
     <hr>
     <div class="row">
       <div class="col-sm-4">
-        Last updated: 26 June 2015
+        Last updated: 01 July 2015
       </div>
       <div class="col-sm-8">
 
